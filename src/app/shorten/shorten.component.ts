@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-shorten',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShortenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
+
+  onSubmit(f: NgForm) {
+      this.dataService.shortenUrl(f.value.url).subscribe(r => console.log(r));
+    }
 
 }
