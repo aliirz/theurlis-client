@@ -1,1 +1,7 @@
-<p>shorten works! but is it what i want?</p>
+<h1 class="text-4xl font-bold text-center text-blue-500">The URL is:</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <input name="url" ngModel>
+  <button>
+    Sign up
+  </button>
+</form>
